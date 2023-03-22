@@ -1,0 +1,32 @@
+Analyse scénario 3 :
+
+1) DNS
+
+- Combien de noms de domaines sont résolus et quand ?
+
+Le seul domaine contacté dans cette trace est "rotterdam7058.discord.media" (pour obtenir son adresses IPv4 et IPv6). 
+
+- Quels sont les serveurs autoritatifs pour ces noms de domaines ? Sont-ils gérés par des entreprises différentes ?
+
+Il semblerait que le nom primaire du serveur est : ??
+
+- À quelles entreprises appartiennent les noms de domaines résolus ? Il y en a-t-il d’autres
+que celle qui détient l’application ?
+
+Il semblerait que les propriétaire soient cloudflare (obtenu via whois)
+
+- Quels sont les types de requête DNS effectuées ?
+
+Nous trouvons 2 standard query (pour l'adresse IPv6 et pour l'adresse IPv4) ainsi que leur réponse respective. Dans les réponses nous obtenons plusieurs réponses dans la même réponse. 
+
+- Lorsqu’une requête DNS souhaite obtenir une adresse IP, quelle est sa famille ? Il y a-t-il une version IP préférée par l’application ?
+
+Dans ce cas-ci nous demandons les 2 types d'adresse IP comme cité précédemment.
+
+- Les requêtes contiennent elles des records additionnels ? Le cas échéant, à quoi servent-ils ?
+
+Il n'y a pas de record additionnel 
+
+- Observez-vous des comportements DNS inattendus ?
+
+Non

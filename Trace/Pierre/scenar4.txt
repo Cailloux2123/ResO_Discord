@@ -1,0 +1,32 @@
+Analyse scénario 4 :
+
+1) DNS
+
+- Combien de noms de domaines sont résolus et quand ?
+
+Voici les domaines contacté au début de la trace et à ce qu'il semble être des éléments important (allumage de l'appel, du partage d'écran). On y retrouve "discord.com", "rotterdam9347.discord.media" "rotterdam7413.discord.media".
+
+- Quels sont les serveurs autoritatifs pour ces noms de domaines ? Sont-ils gérés par des entreprises différentes ?
+
+Il semblerait que le nom primaire du serveur est : "gabe.ns.cloudfare.com"
+
+- À quelles entreprises appartiennent les noms de domaines résolus ? Il y en a-t-il d’autres
+que celle qui détient l’application ?
+
+Il semblerait que les propriétaire soient cloudflare (obtenu via whois en plus de wireshark)
+
+- Quels sont les types de requête DNS effectuées ?
+
+Plusieurs query sont faites pour obtenir les adresses IPv4 et IPv6 de chaque domaine a différent moment (qui semble être des moments clés de la trace). Plusieurs adresses possibles dans une seule réponse. 
+
+- Lorsqu’une requête DNS souhaite obtenir une adresse IP, quelle est sa famille ? Il y a-t-il une version IP préférée par l’application ?
+
+Dans ce cas-ci nous demandons les 2 types d'adresse IP comme cité précédemment.
+
+- Les requêtes contiennent elles des records additionnels ? Le cas échéant, à quoi servent-ils ?
+
+Il n'y a pas de record additionnel 
+
+- Observez-vous des comportements DNS inattendus ?
+
+Une requête DNS (pkt 69) n'a pas obtenu de réponse. Pareil pour la 136-142-143-154 (point communs entre les 4, ce sont des adresses IPv6 pour la source et lka destination).
