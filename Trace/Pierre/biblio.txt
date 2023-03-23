@@ -1,0 +1,9 @@
+Bibliographie : 
+
+https://www.cloudflare.com/fr-fr/learning/ddos/glossary/internet-control-message-protocol-icmp/#:~:text=L'Internet%20Control%20Message%20Protocol%20(ICMP)%20est%20un%20protocole,leur%20destination%20en%20temps%20voulu.
+
+https://www.napsis.fr/telephonie-ip/rtp-rtcp/#:~:text=Qu'est%2Dce%20que%20RTCP,qualit%C3%A9%20du%20service%20(QoS).
+
+https://www.cert.ssi.gouv.fr/avis/CERTA-2000-AVI-021/#:~:text=Le%20protocole%20NBNS%20(pour%20NetBIOS,vuln%C3%A9rabilit%C3%A9%20y%20a%20%C3%A9t%C3%A9%20d%C3%A9cel%C3%A9e.
+
+https://fr.wikipedia.org/wiki/Simple_Service_Discovery_Protocol

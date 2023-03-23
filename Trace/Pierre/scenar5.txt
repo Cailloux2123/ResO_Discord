@@ -30,3 +30,79 @@ Il n'y a pas de record additionnel
 - Observez-vous des comportements DNS inattendus ?
 
 Une requête DNS (pkt 2517) n'a pas obtenu de réponse. Pareil pour la 4443-6957 (point communs entre les 2, ce sont des adresses IPv6 pour la source et lka destination).
+
+2) Couche réseau
+
+- Lorsque IPv4 est utilisé, l’application utilise-t-elle des techniques pour traverser les NAT?
+
+Rien trouvé on dirait à vérifier
+
+- Quels sont les adresses vers lesquels des paquets sont envoyés ? Retrouvez à quels noms de domaine elles correspondent, observez-vous une tendance particulière dans la famille d’adresse ? Pouvez-vous l’expliquer ?
+
+"162.159.136.234","192.168.1.11"
+"192.168.1.1","192.168.1.255"
+"192.168.1.1","239.255.255.250"
+"192.168.1.11","162.159.135.232"
+"192.168.1.11","192.168.1.1"
+"192.168.1.11","162.159.138.232"
+"192.168.1.11","66.22.197.118"
+"192.168.1.11","162.159.134.233"
+"192.168.1.11","66.22.198.131"
+"192.168.1.11","162.159.136.232"
+
+192.168.1.11 : Adresse privée
+192.168.1.1 : Adresse privée
+162.159.136.234 : Cloudflare
+192.168.1.255 : Adresse privée
+239.255.255.250 Whois n'a aucune info
+162.159.135.232 : Cloudflare
+162.159.138.232 : Cloudflare
+66.22.197.118 : RIPE qui a ensuite fait un renvoie qui suit discord-nlrtm1-1
+162.159.134.233 : Cloudflare
+66.22.198.131 : RIPE qui a ensuite fait un renvoie qui suit discord-nlrtm1-1
+162.159.136.232 : Cloudflare
+
+3) Couche Transport
+
+- Quels sont les protocoles de transports utilisés pour chaque fonctionnalité ?
+
+TCP, UDP (+RTCP)
+
+- Il y a-t-il plusieurs connexions vers un même nom de domaine ? Si oui, pouvez-vous l’expliquer ?
+
+TODO
+
+- Si vous observez du trafic QUIC, quels sont les versions utilisées ? Pouvez-vous identifier des extensions négociées dans le handshake ?
+
+Pas de QUIC
+
+- Lorsque vous observez du trafic UDP, identifiez-vous d’autres protocoles que QUIC et DNS ? Expliquez comment ils sont utilisés par l’application.
+
+On retrouve ICMP, NBNS, RTCP et SSDP.
+
+RTCP, acronyme de Real Time Transport Control Protocol, est un protocole utilisé en complément de RTP. Là où RTP transmet des données, RTCP, lui, fournit des méta-données statistiques sur la qualité du service (QoS).
+L'Internet Control Message Protocol (ICMP) est un protocole de la couche réseau utilisé par les périphériques réseau pour diagnostiquer les problèmes de communication du réseau. L'ICMP est principalement utilisé pour déterminer si les données atteignent ou non leur destination en temps voulu. Le protocole ICMP est généralement utilisé sur les périphériques réseau, tels que les routeurs. ICMP est crucial pour le signalement des erreurs et les tests, mais il peut également être utilisé dans les attaques par déni de service distribué (DDoS).
+Simple Service Discovery Protocol (SSDP) est un protocole réseau basé sur la suite de protocoles Internet pour la diffusion et la découverte de services de réseau et d'informations de présence.
+Par conception, le protocole NBNS entre en jeu dans la résolution des conflits de noms sous Windows. C'est aussi, par conception, un protocole sans authentification il est donc sujet à l'usurpation d'identité (spoofing).
+
+4 ) Chiffrement et sécurité
+
+- L’utilisation du DNS est-elle sécurisée ? Comment ?
+
+- Quelles versions de TLS sont utilisées ? Précisez les protocoles de transport sécurisés par ces versions.
+
+- Quel est la durée de vie des certificats utilisés ? Par qui sont-ils certifiés ?
+
+- Lorsque vous pouvez observer l’établissement du chiffrement, quels sont les algorithmes de chiffrement utilisés ?
+
+- Si vous observez du trafic UDP, semble-t-il chiffré ? Comment est-il sécurisé ?
+
+5) Application
+
+- Quels comportements observez-vous lors d’une conversation comparée à un appel ? Quel impact à l’utilisation de la vidéo par rapport à un appel audio uniquement ?
+
+- Quel est le volume de données échangées par l’application pour chacune de ces fonctionnalités ? Utilisez une base appropriée permettant la comparaison (par ex. par minute).
+
+- Il y a-t-il des serveurs relais utilisés pour interagir avec un utilisateur ou les applications communiquent-elles directement ? Observez-vous autre chose lorsque les deux utilisateurs sont sur le même réseau Wi-Fi ?
+
+-Est-ce qu’interagir avec un utilisateur se trouvant dans le même réseau Wi-Fi ou Ethernet à un impact sur la façon dont le trafic applicatif est transporté ? Il y a-t-il des serveurs relais ?

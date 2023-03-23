@@ -30,3 +30,73 @@ Il n'y a pas de record additionnel
 - Observez-vous des comportements DNS inattendus ?
 
 Non
+
+2) Couche réseau
+
+- Lorsque IPv4 est utilisé, l’application utilise-t-elle des techniques pour traverser les NAT?
+
+Rien trouvé on dirait à vérifier TODO
+
+- Quels sont les adresses vers lesquels des paquets sont envoyés ? Retrouvez à quels noms de domaine elles correspondent, observez-vous une tendance particulière dans la famille d’adresse ? Pouvez-vous l’expliquer ?
+
+Afin d'obtenir les adresses, j'ai utilisé l'outil conversation de wireshark. Voici les différentes adresses que j'ai trouvé. 
+"192.168.1.11","162.159.135.232"
+"192.168.1.11","192.168.1.1"
+"162.159.129.233","192.168.1.11"
+"162.159.136.232","192.168.1.11"
+"162.159.136.234","192.168.1.11"
+"192.168.1.1","224.0.0.1"
+"192.168.1.11","224.0.0.251"
+"192.168.1.12","224.0.0.251"
+"192.168.1.12","239.255.255.250"
+
+192.168.1.11 : Adresse privée
+162.159.135.232 : Cloudflare
+192.168.1.1 : Adresse privée
+162.159.129.233 : Cloudflare
+162.159.136.232 : Cloudflare
+162.159.136.234 : Cloudflare
+192.168.1.12 : Adresse privée
+224.0.0.1 Whois n'a aucune info
+224.0.0.251 Whois n'a aucune info
+239.255.255.250 Whois n'a aucune info
+
+3) Couche Transport
+
+- Quels sont les protocoles de transports utilisés pour chaque fonctionnalité ?
+
+TCP, QUIC (+RTCP)
+
+- Il y a-t-il plusieurs connexions vers un même nom de domaine ? Si oui, pouvez-vous l’expliquer ?
+
+TODO
+
+- Si vous observez du trafic QUIC, quels sont les versions utilisées ? Pouvez-vous identifier des extensions négociées dans le handshake ?
+
+Il semble que la version est draft-29. Le handshake se fait sous TLSv1.3 avec annonce de la version 1.2 en intial. On retrouve une grande liste d'extension dans ce hanshake : length, server_name, supported_groups, application_layer_protocol_negotiation, signature_algorithms, key_share, psk_key_exhange_modes, early_data, supported_versions, quic_transport_parameters, compress_certificate, application_settings, pre_shaared_key.
+
+- Lorsque vous observez du trafic UDP, identifiez-vous d’autres protocoles que QUIC et DNS ? Expliquez comment ils sont utilisés par l’application.
+
+Pas de UDP.
+
+4 ) Chiffrement et sécurité
+
+- L’utilisation du DNS est-elle sécurisée ? Comment ?
+
+- Quelles versions de TLS sont utilisées ? Précisez les protocoles de transport sécurisés par ces versions.
+
+- Quel est la durée de vie des certificats utilisés ? Par qui sont-ils certifiés ?
+
+- Lorsque vous pouvez observer l’établissement du chiffrement, quels sont les algorithmes de chiffrement utilisés ?
+
+- Si vous observez du trafic UDP, semble-t-il chiffré ? Comment est-il sécurisé ?
+
+5) Application
+
+- Quels comportements observez-vous lors d’une conversation comparée à un appel ? Quel impact à l’utilisation de la vidéo par rapport à un appel audio uniquement ?
+
+- Quel est le volume de données échangées par l’application pour chacune de ces fonctionnalités ? Utilisez une base appropriée permettant la comparaison (par ex. par minute).
+
+- Il y a-t-il des serveurs relais utilisés pour interagir avec un utilisateur ou les applications communiquent-elles directement ? Observez-vous autre chose lorsque les deux utilisateurs sont sur le même réseau Wi-Fi ?
+
+-Est-ce qu’interagir avec un utilisateur se trouvant dans le même réseau Wi-Fi ou Ethernet à un impact sur la façon dont le trafic applicatif est transporté ? Il y a-t-il des serveurs relais ?
