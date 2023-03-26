@@ -84,20 +84,38 @@ Simple Service Discovery Protocol (SSDP) est un protocole réseau basé sur la s
 
 - L’utilisation du DNS est-elle sécurisée ? Comment ?
 
+Nous voyons dans les packets DNS que le protocol UDP est présent mais il s'agit d'un protocol de transport. Parmis les logiciel de sécurité on retrouve au cours de la trace du TLS (qu'on retrouve même avant le DNS).
+
 - Quelles versions de TLS sont utilisées ? Précisez les protocoles de transport sécurisés par ces versions.
+
+On retrouve du TLSV1.2 dans ce scénario. On remarque que un handshake avec des adresses IPv6 au pkt : 80-82-84-86-88-89. Il crypte QUIC(TLSV1.3) et TCP(TLSV1.2).
 
 - Quel est la durée de vie des certificats utilisés ? Par qui sont-ils certifiés ?
 
+Pas trouver le temps dans le handshake dispo (#TODO)
+
 - Lorsque vous pouvez observer l’établissement du chiffrement, quels sont les algorithmes de chiffrement utilisés ?
 
+Voir pkt 80-82 bc y en a bcp
+
 - Si vous observez du trafic UDP, semble-t-il chiffré ? Comment est-il sécurisé ?
+
+Le traffic UDP ne semble pas chiffré, le checksum reste d'ailleurs toujours sur unverified. 
 
 5) Application
 
 - Quels comportements observez-vous lors d’une conversation comparée à un appel ? Quel impact à l’utilisation de la vidéo par rapport à un appel audio uniquement ?
 
+La grosse différence au cours de mes traces est la présence du protocoles QUIC ou non, il semble que quand nous ayons un échange vocal sans caméra, le protocole quic est présent. bcp + de pkt via caméra et partage que sans rien (logique on dira). Les différents flux audio et video sont envoyés et reçus via UDP également. 
+
 - Quel est le volume de données échangées par l’application pour chacune de ces fonctionnalités ? Utilisez une base appropriée permettant la comparaison (par ex. par minute).
+
+pyshark
 
 - Il y a-t-il des serveurs relais utilisés pour interagir avec un utilisateur ou les applications communiquent-elles directement ? Observez-vous autre chose lorsque les deux utilisateurs sont sur le même réseau Wi-Fi ?
 
--Est-ce qu’interagir avec un utilisateur se trouvant dans le même réseau Wi-Fi ou Ethernet à un impact sur la façon dont le trafic applicatif est transporté ? Il y a-t-il des serveurs relais ?
+Voir les différents serveurs contactés via DNS 
+
+- Est-ce qu’interagir avec un utilisateur se trouvant dans le même réseau Wi-Fi ou Ethernet à un impact sur la façon dont le trafic applicatif est transporté ? Il y a-t-il des serveurs relais ?
+
+Voir cette semaine avec Flo 

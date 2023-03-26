@@ -84,20 +84,38 @@ Simple Service Discovery Protocol (SSDP) est un protocole réseau basé sur la s
 
 - L’utilisation du DNS est-elle sécurisée ? Comment ?
 
+Nous voyons dans les packets DNS que le protocol UDP est présent mais il s'agit d'un protocol de transport. Parmis les logiciel de sécurité on retrouve au cours de la trace du TLS (qu'on retrouve même avant le DNS).
+
 - Quelles versions de TLS sont utilisées ? Précisez les protocoles de transport sécurisés par ces versions.
+
+TLSV1.2 pour transporter les données. Dans les handshake avec QUIC on retrouve du cryptage avec TLS1.3. Il crypte QUIC(TLSV1.3) et TCP(TLSV1.2).
 
 - Quel est la durée de vie des certificats utilisés ? Par qui sont-ils certifiés ?
 
+Comme le handshake semble se faire dans un pkt QUIC, je ne trouve pas le temps de vie des certificats ni par qui ils sont fournis (#TODO)
+
 - Lorsque vous pouvez observer l’établissement du chiffrement, quels sont les algorithmes de chiffrement utilisés ?
 
+Parmis les ciper_suite utilisé on retrouve : TLS_AES_128_GCM_SHA256, TLS_AES_256_GCM_SHA384 et enfin TLS_CHACHA20_POLY1305_SHA256. Aucun méthode de compression n'est choisi (champs mis à null). La cipher suite choisi sera : TLS_AES_128_GCM_SHA256. On retrouve un second Handshake par la suite mais avec les même ciphersuite et la même méthode de compression (aucune). On voit par la suite un handshake pour TLSv1.3 où l'on retrouve 18 cipher suite différents. 
+
 - Si vous observez du trafic UDP, semble-t-il chiffré ? Comment est-il sécurisé ?
+
+Le traffic UDP ne semble pas chiffré, le checksum reste d'ailleurs toujours sur unverified. 
 
 5) Application
 
 - Quels comportements observez-vous lors d’une conversation comparée à un appel ? Quel impact à l’utilisation de la vidéo par rapport à un appel audio uniquement ?
 
+La grosse différence au cours de mes traces est la présence du protocoles QUIC ou non, il semble que quand nous ayons un échange vocal sans caméra, le protocole quic est présent. bcp + de pkt via caméra et partage que sans rien (logique on dira). Les différents flux audio et video sont envoyés et reçus via UDP également. 
+
 - Quel est le volume de données échangées par l’application pour chacune de ces fonctionnalités ? Utilisez une base appropriée permettant la comparaison (par ex. par minute).
+
+pyshark
 
 - Il y a-t-il des serveurs relais utilisés pour interagir avec un utilisateur ou les applications communiquent-elles directement ? Observez-vous autre chose lorsque les deux utilisateurs sont sur le même réseau Wi-Fi ?
 
--Est-ce qu’interagir avec un utilisateur se trouvant dans le même réseau Wi-Fi ou Ethernet à un impact sur la façon dont le trafic applicatif est transporté ? Il y a-t-il des serveurs relais ?
+Voir les différents serveurs contactés via DNS 
+
+- Est-ce qu’interagir avec un utilisateur se trouvant dans le même réseau Wi-Fi ou Ethernet à un impact sur la façon dont le trafic applicatif est transporté ? Il y a-t-il des serveurs relais ?
+
+Voir cette semaine avec Flo 
