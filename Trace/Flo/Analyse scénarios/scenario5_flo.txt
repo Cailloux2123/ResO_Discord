@@ -1,0 +1,56 @@
+Scénario 5 - appel avec cam et partage d'écran 
+
+1) DNS
+
+-Combien de noms de domaines sont résolus et quand ?
+
+Rotterdam5742.discord.media à la 6;46237
+Rotterdam2421.discord.media à la 15.877987
+
+- Quels sont les serveurs autoritatifs pour ces noms de domaines ? Sont-ils gérés par des entreprises différentes ?
+
+Il semblerait que le nom primaire du serveur est : ??
+
+Quand je cherche dans les answer, pour le paquet 298, j'ai 5 serveurs, tous identiques mais avec ip différente, je suppose que l'info dois se trouver dans la partie "authoritative nameservers" or il n'y a pas cette section dans mon cas
+
+https://social.technet.microsoft.com/Forums/windowsserver/en-US/55fd5ad7-7fb5-4186-969d-b4bfcbe19891/what-is-the-authorative-and-non-authorative-dns?forum=winservergen
+
+https://www.bortzmeyer.org/serveur-dns-faisant-autorite.html
+
+-> utilisation de dig 
+
+- À quelles entreprises appartiennent les noms de domaines résolus ? Il y en a-t-il d’autres
+que celle qui détient l’application ?
+
+Cloudflare 
+
+- Quels sont les types de requête DNS effectuées ?
+
+Query answer a la fois pour ipv4 et pour ipv6
+
+- Lorsqu’une requête DNS souhaite obtenir une adresse IP, quelle est sa famille ? Il y a-t-il une version IP préférée par l’application ?
+
+Ipv4 et ipv6
+
+- Les requêtes contiennent elles des records additionnels ? Le cas échéant, à quoi servent-ils ?
+Non
+
+- Observez-vous des comportements DNS inattendus ?
+Non
+
+2) Couche réseau
+
+- Lorsque IPv4 est utilisé, l’application utilise-t-elle des techniques pour traverser les NAT?
+
+Icmp sert a vérifier et informer notamment quand un port destination est dnnateignable 
+https://www.cisco.com/c/fr_ca/support/docs/ip/network-address-translation-nat/200726-Configure-NAT-to-Enable-Communication-Be.html
+
+Maintenant j'ai pas trouvé d'infos concernant les technique nat 
+
+https://www.ciscomadesimple.be/2013/04/06/configuration-du-nat-sur-un-routeur-cisco/
+
+https://learn.microsoft.com/fr-fr/windows-hardware/drivers/network/traversing-nats-and-napts-with-udp-encapsulated-esp-packets
+
+
+
+

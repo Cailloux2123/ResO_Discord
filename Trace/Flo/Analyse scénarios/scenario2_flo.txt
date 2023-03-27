@@ -1,0 +1,70 @@
+Scénario 2 - appel sans cam sans écran Flo
+
+- Combien de noms de domaines sont résolus et quand ?
+
+1 seul, on observe 2 appels (query answer x2) à "rotterdam2796.discord.media" une sur 0x8ee7 et l'autre sur 0xa102
+
+- Quels sont les serveurs autoritatifs pour ces noms de domaines ? Sont-ils gérés par des
+entreprises différentes ?
+
+Bizarrement ca n'apparait nulle part
+
+-À quelles entreprises appartiennent les noms de domaines résolus ? Il y en a-t-il d’autres
+que celle qui détient l’application ?
+
+Il semblerait qu'ils appartiennent à cloudflare
+
+- Quels sont les types de requête DNS effectuées ?
+
+Query answer
+
+-Lorsqu’une requête DNS souhaite obtenir une adresse IP, quelle est sa famille ? Il y a-t-il
+une version IP préférée par l’application ?
+
+Pas de version préféré, on observe une requête A (ipv4) et une autre AAAA (ipv6)
+
+-Les requêtes contiennent elles des records additionnels ? Le cas échéant, à quoi servent-ils ?
+
+Je n'en vois pas 
+
+2) couche réseau
+-Lorsque IPv4 est utilisé, l’application utilise-t-elle des techniques pour traverser les NAT?
+https://fr.wikipedia.org/wiki/Network_address_translation 
+Je pense que oui mais a voir avec cet article
+
+-Quels sont les adresses vers lesquels des paquets sont envoyés ? Retrouvez à quels noms de domaine elles correspondent, observez-vous une tendance particulière dans la famille d’adresse ? Pouvez-vous l’expliquer ?
+
+3.73;173.154    192.168.1.60	amazon vers moi 
+17.248.177.226      "		apple vers moi
+17.253.53.207       "		apple vers moi
+23.201.208.41			Akamai vers moi
+54.155.46.195			Amazon vers moi
+87.248.100.168			yahoo vers moi
+104.18.36.21			cloudflare vers moi
+162.159.129.233			cloudflare vers moi
+".136.232			cloudflare vers moi
+".137.234			cloudflare vers moi
+192.168.1.60	224.0.0.251	inconnu
+"		17.57.146.41	moi vers apple
+#		17.248.176.232. moi vers apple
+#		20.90.156.32.   moi vers microsoft
+#		66.22.197.84	moi vers ripe puis discord-nlrtm1-1 route pour object for &3d.net Rotterdam center
+#		130.104.1.185	moi vers ripe puis belnet(UCLouvain)
+#		142.250.179.161 moi vers google
+#		162.159.138.234	moi vers cloudflare
+
+-Quels sont les protocoles de transports utilisés pour chaque fonctionnalité ?
+
+TCP, UDP
+
+-Si vous observez du trafic QUIC, quels sont les versions utilisées ? Pouvez-vous identifier des extensions négociées dans le handshake ?
+
+Pas vu
+
+-Lorsque vous observez du trafic UDP, identifiez-vous d’autres protocoles que QUIC et DNS ? Expliquez comment ils sont utilisés par l’application.
+
+RTCP, MDNS, ICMPv6, ICMP
+
+
+
+

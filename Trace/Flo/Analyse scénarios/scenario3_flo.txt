@@ -1,0 +1,40 @@
+Scénario 3 - appel avec cam sans écran
+
+- Combien de noms de domaines sont résolus et quand ?
+
+Rotterdam7058.dicord.media
+
+-Quels sont les serveurs autoritatifs pour ces noms de domaines ? Sont-ils gérés par des entreprises différentes ?
+
+Pas vu 
+
+-À quelles entreprises appartiennent les noms de domaines résolus ? Il y en a-t-il d’autres
+que celle qui détient l’application ?
+
+L'ipv4 est 162.159.128.235 -> cloudflare
+L'ipv6 est 2606:4700:7::a29f:81eb -> cloudflare
+
+-Quels sont les types de requête DNS effectuées ?
+
+Query answer 
+
+- Lorsqu’une requête DNS souhaite obtenir une adresse IP, quelle est sa famille ? Il y a-t-il une version IP préférée par l’application ?
+
+Dans ce cas-ci nous demandons les 2 types d'adresse IP comme cité précédemment.
+
+- Les requêtes contiennent elles des records additionnels ? Le cas échéant, à quoi servent-ils ?
+
+Pas vu
+
+- Observez-vous des comportements DNS inattendus ? 
+
+Pas vu
+
+2) couche réseau
+
+- Lorsque IPv4 est utilisé, l’application utilise-t-elle des techniques pour traverser les NAT?
+
+Rien trouvé on dirait à vérifier
+
+- Quels sont les adresses vers lesquels des paquets sont envoyés ? Retrouvez à quels noms de domaine elles correspondent, observez-vous une tendance particulière dans la famille d’adresse ? Pouvez-vous l’expliquer ?
+
