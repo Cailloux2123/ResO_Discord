@@ -7,3 +7,5 @@ https://www.napsis.fr/telephonie-ip/rtp-rtcp/#:~:text=Qu'est%2Dce%20que%20RTCP,q
 https://www.cert.ssi.gouv.fr/avis/CERTA-2000-AVI-021/#:~:text=Le%20protocole%20NBNS%20(pour%20NetBIOS,vuln%C3%A9rabilit%C3%A9%20y%20a%20%C3%A9t%C3%A9%20d%C3%A9cel%C3%A9e.
 
 https://fr.wikipedia.org/wiki/Simple_Service_Discovery_Protocol
+
+https://www.bortzmeyer.org/serveur-dns-faisant-autorite.html?fbclid=IwAR2giUgYKZlI3t33r9buHeYjdrpPfxC__kiqbXeVO8H_mV-L9tyR3IOL_ZQ

@@ -8,7 +8,7 @@ Le seul domaine contacté dans cette trace est "rotterdam7058.discord.media" (po
 
 - Quels sont les serveurs autoritatifs pour ces noms de domaines ? Sont-ils gérés par des entreprises différentes ?
 
-Il semblerait que le nom primaire du serveur est : ??
+Il semblerait que le nom primaire du serveur est : Avec la commande "dig NS rotterdam2796.discord.com" nous trouvons : gabe.ns.cloudfare.com. et dns.cloudflare.com. .
 
 - À quelles entreprises appartiennent les noms de domaines résolus ? Il y en a-t-il d’autres
 que celle qui détient l’application ?

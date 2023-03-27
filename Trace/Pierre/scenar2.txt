@@ -8,7 +8,7 @@ Le premier domaine est "discord.com" vers le début de la trace. Lors du début 
 
 - Quels sont les serveurs autoritatifs pour ces noms de domaines ? Sont-ils gérés par des entreprises différentes ?
 
-Il semblerait que le nom primaire du serveur est : "gabe.ns.cloudfare.com"
+Il semblerait que le nom primaire du serveur est : "gabe.ns.cloudfare.com". Dans la commande Dig (dig NS com puis dig @j.gtld-servers.net. A discord.com), nous trouvons également sima.ns.cloudflare.com. Avec la commande "dig NS rotterdam2796.discord.com" nous trouvons : gabe.ns.cloudfare.com. et dns.cloudflare.com. .
 
 - À quelles entreprises appartiennent les noms de domaines résolus ? Il y en a-t-il d’autres
 que celle qui détient l’application ?

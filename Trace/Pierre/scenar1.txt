@@ -8,7 +8,7 @@ Le seul domaine contacté est "discord.com". Ce domaine est contacté au tout d�
 
 - Quels sont les serveurs autoritatifs pour ces noms de domaines ? Sont-ils gérés par des entreprises différentes ?
 
-Il semblerait que le nom primaire du serveur est : "gabe.ns.cloudfare.com"
+Il semblerait que le nom primaire du serveur est : "gabe.ns.cloudfare.com" vu dans Wireshark. Dans la commande Dig (dig NS com puis dig @j.gtld-servers.net. A discord.com), nous trouvons également sima.ns.cloudflare.com.
 
 - À quelles entreprises appartiennent les noms de domaines résolus ? Il y en a-t-il d’autres
 que celle qui détient l’application ?
