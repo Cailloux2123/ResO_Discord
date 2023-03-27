@@ -9,3 +9,5 @@ https://www.cert.ssi.gouv.fr/avis/CERTA-2000-AVI-021/#:~:text=Le%20protocole%20N
 https://fr.wikipedia.org/wiki/Simple_Service_Discovery_Protocol
 
 https://www.bortzmeyer.org/serveur-dns-faisant-autorite.html?fbclid=IwAR2giUgYKZlI3t33r9buHeYjdrpPfxC__kiqbXeVO8H_mV-L9tyR3IOL_ZQ
+
+https://docs.wpilib.org/fr/stable/docs/networking/networking-introduction/networking-basics.html
