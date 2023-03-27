@@ -7,7 +7,7 @@ Scénario 2 - appel sans cam sans écran Flo
 - Quels sont les serveurs autoritatifs pour ces noms de domaines ? Sont-ils gérés par des
 entreprises différentes ?
 
-Bizarrement ca n'apparait nulle part
+A l'aide de la commande "dig NS rotterdam2796.discord.media" nous trouvons les 2 serveurs autoritaires : gabe.ns.cloudflare.com, dns.cloudflare.com.
 
 -À quelles entreprises appartiennent les noms de domaines résolus ? Il y en a-t-il d’autres
 que celle qui détient l’application ?

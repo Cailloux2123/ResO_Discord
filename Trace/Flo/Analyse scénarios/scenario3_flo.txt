@@ -6,7 +6,7 @@ Rotterdam7058.dicord.media
 
 -Quels sont les serveurs autoritatifs pour ces noms de domaines ? Sont-ils gérés par des entreprises différentes ?
 
-Pas vu 
+A l'aide de la commande "dig NS rotterdam7058.discord.media" nous trouvons les 2 serveurs autoritaires : gabe.ns.cloudflare.com, dns.cloudflare.com. 
 
 -À quelles entreprises appartiennent les noms de domaines résolus ? Il y en a-t-il d’autres
 que celle qui détient l’application ?
