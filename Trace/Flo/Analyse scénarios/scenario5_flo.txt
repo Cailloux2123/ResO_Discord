@@ -115,6 +115,15 @@ Voir dessus
 
 - Quel est la durée de vie des certificats utilisés ? Par qui sont-ils certifiés ?
 
+On contacte 2 serveurs, Un pour l'appel classique (voix + cam) (rotterdam5742) et l'autre pour le partage d'écran (rotterdam2421 paquet 2393)
+
+Les certificats sont d'une validité de 1 an pile pour Rotterdam5742 et de 27-01-2020 à 31-12-2024 (23 mois a peu près) 
+
+Ils sont certifié par digicert a vérifier
+
+Pour cela taper la commande filtre "ils.hanshake.certificate"
+Ensuite scroller dans certificate et scroll menu par menu -> digicert
+
 Voir paquet 334 (pour 1.2, c'est TLS_ecdhe-ecdsa-with-aes-128_GCM_SHA256)
 Avec le filtre ils.handshake.ciphersuite on peut filtrer les paquets
 Apparemment discord utilise 1.2
