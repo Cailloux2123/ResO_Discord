@@ -9,7 +9,7 @@ Rotterdam2421.discord.media à la 15.877987
 
 - Quels sont les serveurs autoritatifs pour ces noms de domaines ? Sont-ils gérés par des entreprises différentes ?
 
-Il semblerait que le nom primaire du serveur est : ??
+Il semblerait que le nom primaire du serveur est : A l'aide de la commande "dig NS rotterdam5742.discord.media" nous trouvons les 2 serveurs autoritaires : gabe.ns.cloudflare.com, dns.cloudflare.com. Pareil pour rotterdam2421.discord.media
 
 Quand je cherche dans les answer, pour le paquet 298, j'ai 5 serveurs, tous identiques mais avec ip différente, je suppose que l'info dois se trouver dans la partie "authoritative nameservers" or il n'y a pas cette section dans mon cas
 
