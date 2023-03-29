@@ -1,0 +1,75 @@
+Liste des Protocoles présents dans les différents scénario :
+
+Scénario 1 :
+
+- ARP
+- DNS
+- ICMPv6
+- IGMPv2
+- MDNS
+- NTP
+- QUIC
+- SSDP
+- TCP
+- TLSv1.2
+
+Scénario 2 :
+ 
+- ARP
+- DNS
+- ICMPv6
+- IGMPv2
+- QUIC
+- RTCP
+- TCP
+- TLSv1.2
+- TLSv1.3
+- UDP
+
+Scénario 3 :
+
+- ARP
+- DNS
+- ICMP
+- ICMPv6
+- IGMPv2
+- MDNS
+- RTCP
+- SSDP
+- TCP
+- TLSv1.2
+- UDP
+
+Scénario 4 :
+
+- ARP
+- DNS
+- ICMP
+- ICMPv6
+- QUIC
+- RTCP
+- SSDP
+- TCP
+- TLSv1.2
+- TLSv1.3
+- UDP
+
+Scénario 5 :
+
+- ARP
+- BROWSER
+- DNS
+- ICMP
+- ICMPv6
+- NBNS
+- RTCP
+- SSDP
+- TCP
+- TLSv1.2
+- TLSv1.3
+- UDP
+
+
+
+1er CCL : Le protocole de sécurité est un TLS qui varie entre la verison 1.2 et 1.3.
+2E CCL : Le flux audio ainsi que le flux vidéo passe via UDP
